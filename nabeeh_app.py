@@ -299,7 +299,7 @@ def solar_pv(strglo: float, p_rated=100, pr=0.80) -> float:
 
 
 def carbon(consumption_wh: float, e_pv_wh: float) -> tuple:
-    EF = 0.03034  # kg CO2 / Wh
+    EF = 0.000039  # kg CO2 / Wh  =  39 g/kWh (Swiss grid, Our World in Data / Ember 2026 
     co2_base    = consumption_wh * EF
     co2_pv      = max(0, consumption_wh - e_pv_wh) * EF
     co2_saved   = co2_base - co2_pv
